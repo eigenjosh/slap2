@@ -4,6 +4,10 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4bcae5cf41e40683974eaf665bca578d1a0701f0
 
 Vue.config.productionTip = false
 
