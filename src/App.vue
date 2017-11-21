@@ -1,8 +1,7 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <h1>Hello SlapGame 2.0</h1>
-    <router-view/>
+    <router-view/>  
+    <!-- router-view - defer to Vue router to specify what is drawn to DOM -->
   </div>
 </template>
 
@@ -13,12 +12,5 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>

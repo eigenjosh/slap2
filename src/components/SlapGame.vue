@@ -1,35 +1,31 @@
 <template>
-  <div class="HelloWorld">
+  <div class="SlapGame">
 
-    <div v-for="player in players" class="player" :class="getHealthStatus(player)">
-
+    <div class="player" :class="getHealthStatus(player)" v-if="player.name">
       <img :src="player.picture" alt="">
-      <h1>Player: {{player.playerName}}</h1>
+      <h1>Player: {{player.name}}</h1>
       <h4 v-if="player.health >= 1">Health: {{player.health}}</h4>
       <h4 v-else>DEAD</h4>
-      <button v-for="(val, type) in player.attacks" :disabled="player.health <= 1" @click="attack(player, type)">{{type}}</button>
-
+      <button v-for="(val, type) in player.attacks" :disabled="player.health <= 1" @click="attack(type)">{{type}}</button>
+    </div>
+    <div v-else>
+      Please select a player.
     </div>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'HelloWorld',
+    name: 'SlapGame',
     data() {
       return {
 
       }
     },
-    computed: {
-      players() {
-        return this.$store.state.players
-      }
-    },
     methods: {
-      attack(player, type) {
+      attack(type) {
 
-        this.$store.dispatch('attack', { player, type })
+        this.$store.dispatch('attack', type)
       },
       getHealthStatus(player) {
         return {
@@ -42,6 +38,9 @@
     computed: {
       players() {
         return this.$store.state.players
+      },
+      player() {
+        return this.$store.state.activePlayer
       }
     }
   }
