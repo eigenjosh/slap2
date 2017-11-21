@@ -7,12 +7,7 @@
       <h1>Player: {{player.playerName}}</h1>
       <h4 v-if="player.health >= 1">Health: {{player.health}}</h4>
       <h4 v-else>DEAD</h4>
-<<<<<<< HEAD
       <button v-for="(val, type) in player.attacks" :disabled="player.health <= 1" @click="attack(player, type)">{{type}}</button>
-=======
-
-      <button v-for="(val, attack) in player.attacks" :disabled="player.health <= 1" @click="slap(player, attack)">{{attack}}</button>
->>>>>>> 4bcae5cf41e40683974eaf665bca578d1a0701f0
 
     </div>
   </div>
@@ -24,7 +19,6 @@
     data() {
       return {
 
-<<<<<<< HEAD
       }
     },
     computed: {
@@ -36,13 +30,6 @@
       attack(player, type) {
 
         this.$store.dispatch('attack', { player, type })
-=======
-      }
-    },
-    methods: {
-      slap(player, attack) {
-        this.$store.dispatch('slap', { player, attack })
->>>>>>> 4bcae5cf41e40683974eaf665bca578d1a0701f0
       },
       getHealthStatus(player) {
         return {
